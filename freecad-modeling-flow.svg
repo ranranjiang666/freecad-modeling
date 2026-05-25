@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">FreeCAD Modeling Skill workflow</title>
+  <desc id="desc">A flow from natural language prompt to FreeCAD Python, FreeCADCmd, exported FCStd and STEP files, validation, and CAD Explorer review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef6ff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: 700; fill: #0f172a; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #475569; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; fill: #2563eb; }
+      .arrow { stroke: #2563eb; stroke-width: 4; stroke-linecap: round; fill: none; marker-end: url(#arrowhead); }
+      .accent { fill: #dbeafe; stroke: #93c5fd; stroke-width: 1; }
+      .dark { fill: #0f172a; }
+      .green { fill: #dcfce7; stroke: #86efac; stroke-width: 1; }
+      .orange { fill: #ffedd5; stroke: #fdba74; stroke-width: 1; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <text x="60" y="58" class="title">FreeCAD Modeling Skill</text>
+  <text x="60" y="86" class="body">Natural language in, FreeCAD Python source and checked CAD artifacts out.</text>
+
+  <g transform="translate(56,132)">
+    <rect class="card" width="190" height="170" rx="18"/>
+    <rect class="accent" x="24" y="24" width="56" height="56" rx="14"/>
+    <path class="dark" d="M49 40h28v5H49zm-8 15h36v5H41zm0 15h28v5H41z"/>
+    <text x="24" y="108" class="label">PROMPT</text>
+    <text x="24" y="136" class="title" font-size="22">Describe</text>
+    <text x="24" y="158" class="body">part, dimensions, outputs</text>
+  </g>
+
+  <path class="arrow" d="M265 217 H345"/>
+
+  <g transform="translate(366,132)">
+    <rect class="card" width="190" height="170" rx="18"/>
+    <rect class="green" x="24" y="24" width="56" height="56" rx="14"/>
+    <path class="dark" d="M42 40h28v6H42zm0 15h38v6H42zm0 15h20v6H42z"/>
+    <text x="24" y="108" class="label">SOURCE</text>
+    <text x="24" y="136" class="title" font-size="22">FreeCAD Python</text>
+    <text x="24" y="158" class="body">parametric model code</text>
+  </g>
+
+  <path class="arrow" d="M575 217 H655"/>
+
+  <g transform="translate(676,132)">
+    <rect class="card" width="190" height="170" rx="18"/>
+    <rect class="orange" x="24" y="24" width="56" height="56" rx="14"/>
+    <circle cx="52" cy="52" r="21" fill="none" stroke="#0f172a" stroke-width="5"/>
+    <path d="M52 31v21l14 12" fill="none" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+    <text x="24" y="108" class="label">RUN</text>
+    <text x="24" y="136" class="title" font-size="22">FreeCADCmd</text>
+    <text x="24" y="158" class="body">headless generation</text>
+  </g>
+
+  <path class="arrow" d="M885 217 H965"/>
+
+  <g transform="translate(986,132)">
+    <rect class="card" width="158" height="170" rx="18"/>
+    <rect class="accent" x="24" y="24" width="56" height="56" rx="14"/>
+    <path class="dark" d="M35 66l17-34 17 34zm18-9h16v7H48z"/>
+    <text x="24" y="108" class="label">OUTPUT</text>
+    <text x="24" y="136" class="title" font-size="22">FCStd + STEP</text>
+    <text x="24" y="158" class="body">validate and review</text>
+  </g>
+
+  <g transform="translate(245,335)">
+    <rect x="0" y="0" width="710" height="44" rx="22" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="26" y="28" class="body">Checks: script exit, Shape.isValid(), bounding box, exported files, optional CAD Explorer visual review</text>
+  </g>
+</svg>
