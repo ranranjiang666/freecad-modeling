@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="620" viewBox="0 0 1460 620" role="img" aria-labelledby="title desc">
+  <title id="title">FreeCAD Modeling Skill workflow</title>
+  <desc id="desc">A refined workflow diagram showing natural language input, FreeCAD Python source, FreeCADCmd execution, validation, and CAD artifact review.</desc>
+  <defs>
+    <linearGradient id="panel-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="56%" stop-color="#eef6ff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#dbeafe" stroke-width="1"/>
+    </pattern>
+    <filter id="soft-shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#1e293b" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      .shell { fill: url(#panel-bg); }
+      .grid { fill: url(#grid); opacity: 0.55; }
+      .eyebrow { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #2563eb; letter-spacing: 1.2px; }
+      .h1 { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 42px; font-weight: 800; fill: #0f172a; }
+      .lead { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 20px; fill: #334155; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#soft-shadow); }
+      .card-top { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1; }
+      .step { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 800; fill: #64748b; letter-spacing: 1.4px; }
+      .title { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 27px; font-weight: 800; fill: #0f172a; }
+      .subtitle { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 16px; fill: #475569; }
+      .tag { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 14px; font-weight: 650; fill: #334155; }
+      .mono { font-family: Consolas, SFMono-Regular, Menlo, monospace; font-size: 15px; fill: #1e293b; }
+      .tiny { font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+      .blue { fill: #dbeafe; stroke: #93c5fd; }
+      .green { fill: #dcfce7; stroke: #86efac; }
+      .amber { fill: #ffedd5; stroke: #fdba74; }
+      .purple { fill: #ede9fe; stroke: #c4b5fd; }
+      .ink { stroke: #0f172a; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ink-fill { fill: #0f172a; }
+      .rail-line { stroke: #2563eb; stroke-width: 6; stroke-linecap: round; fill: none; }
+      .arrow-head { fill: #ea580c; }
+      .dim { stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round; fill: none; }
+      .check { fill: #0f766e; }
+    </style>
+  </defs>
+
+  <rect class="shell" width="1460" height="620" rx="34"/>
+  <rect class="grid" x="28" y="28" width="1404" height="564" rx="24"/>
+  <path d="M70 134H1390" class="dim" opacity="0.65"/>
+  <path d="M70 510H1390" class="dim" opacity="0.5"/>
+
+  <text x="72" y="72" class="eyebrow">FREECAD MODELING SKILL</text>
+  <text x="72" y="118" class="h1">Prompt to FreeCAD Python, checked before review</text>
+  <text x="72" y="166" class="lead">A portable agent workflow for script-first parametric CAD generation.</text>
+
+  <g transform="translate(84,212)">
+    <rect class="card" width="272" height="218" rx="18"/>
+    <rect class="card-top" x="0" y="0" width="272" height="58" rx="18"/>
+    <path d="M0 40V58H272V40" fill="#f8fafc"/>
+    <text x="26" y="36" class="step">01 INPUT</text>
+    <rect class="blue" x="28" y="82" width="58" height="58" rx="16"/>
+    <path class="ink" d="M46 101H70M46 117H74M46 132H65"/>
+    <text x="108" y="108" class="title">Describe</text>
+    <text x="108" y="134" class="subtitle">part intent, units,</text>
+    <text x="108" y="156" class="subtitle">dimensions, outputs</text>
+    <rect x="28" y="176" width="92" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="46" y="194" class="tiny">80 mm flange</text>
+    <rect x="130" y="176" width="94" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="149" y="194" class="tiny">6 bolt holes</text>
+  </g>
+
+  <line class="rail-line" x1="384" y1="321" x2="444" y2="321"/>
+  <path class="arrow-head" d="M444 312L462 321L444 330Z"/>
+
+  <g transform="translate(484,212)">
+    <rect class="card" width="272" height="218" rx="18"/>
+    <rect class="card-top" x="0" y="0" width="272" height="58" rx="18"/>
+    <path d="M0 40V58H272V40" fill="#f8fafc"/>
+    <text x="26" y="36" class="step">02 SOURCE</text>
+    <rect class="green" x="28" y="82" width="58" height="58" rx="16"/>
+    <text x="43" y="107" class="mono">py</text>
+    <path class="ink" d="M46 122H70M46 134H62"/>
+    <text x="108" y="104" class="title">FreeCAD</text>
+    <text x="108" y="136" class="title">Python</text>
+    <text x="108" y="164" class="subtitle">editable model code</text>
+    <rect x="28" y="176" width="100" height="26" rx="13" fill="#ecfdf5" stroke="#bbf7d0"/>
+    <text x="46" y="194" class="tiny">Part API</text>
+    <rect x="138" y="176" width="106" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="158" y="194" class="tiny">parametric</text>
+  </g>
+
+  <line class="rail-line" x1="784" y1="321" x2="844" y2="321"/>
+  <path class="arrow-head" d="M844 312L862 321L844 330Z"/>
+
+  <g transform="translate(870,212)">
+    <rect class="card" width="316" height="218" rx="18"/>
+    <rect class="card-top" x="0" y="0" width="316" height="58" rx="18"/>
+    <path d="M0 40V58H316V40" fill="#f8fafc"/>
+    <text x="26" y="36" class="step">03 RUN</text>
+    <rect class="amber" x="28" y="82" width="58" height="58" rx="16"/>
+    <rect x="43" y="100" width="29" height="23" rx="4" fill="none" stroke="#0f172a" stroke-width="5"/>
+    <path class="ink" d="M48 132H74"/>
+    <text x="108" y="104" class="title">FreeCADCmd</text>
+    <text x="108" y="134" class="subtitle">headless build,</text>
+    <text x="108" y="156" class="subtitle">export, validation</text>
+    <rect x="28" y="176" width="104" height="26" rx="13" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="46" y="194" class="tiny">isValid()</text>
+    <rect x="142" y="176" width="84" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="160" y="194" class="tiny">bbox</text>
+  </g>
+
+  <line class="rail-line" x1="1214" y1="321" x2="1242" y2="321"/>
+  <path class="arrow-head" d="M1242 312L1260 321L1242 330Z"/>
+
+  <g transform="translate(84,468)">
+    <rect x="0" y="0" width="1328" height="86" rx="22" fill="#ffffff" stroke="#cbd5e1" filter="url(#soft-shadow)"/>
+    <text x="32" y="34" class="step">CHECKED ARTIFACTS</text>
+    <g transform="translate(30,48)">
+      <circle class="check" cx="10" cy="10" r="10"/>
+      <path d="M5 10L8.5 13.5L15 6.5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="28" y="15" class="tag">model.FCStd</text>
+    </g>
+    <g transform="translate(220,48)">
+      <circle class="check" cx="10" cy="10" r="10"/>
+      <path d="M5 10L8.5 13.5L15 6.5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="28" y="15" class="tag">model.step</text>
+    </g>
+    <g transform="translate(398,48)">
+      <circle class="check" cx="10" cy="10" r="10"/>
+      <path d="M5 10L8.5 13.5L15 6.5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="28" y="15" class="tag">script exit code</text>
+    </g>
+    <g transform="translate(636,48)">
+      <circle class="check" cx="10" cy="10" r="10"/>
+      <path d="M5 10L8.5 13.5L15 6.5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="28" y="15" class="tag">Shape.isValid()</text>
+    </g>
+    <g transform="translate(874,48)">
+      <circle class="check" cx="10" cy="10" r="10"/>
+      <path d="M5 10L8.5 13.5L15 6.5" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="28" y="15" class="tag">CAD Explorer review</text>
+    </g>
+  </g>
+
+  <g transform="translate(1274,210)">
+    <rect class="card" width="142" height="220" rx="18"/>
+    <rect class="card-top" x="0" y="0" width="142" height="58" rx="18"/>
+    <path d="M0 40V58H142V40" fill="#f8fafc"/>
+    <text x="20" y="36" class="step">04 REVIEW</text>
+    <rect class="purple" x="42" y="82" width="58" height="58" rx="16"/>
+    <path d="M71 95L91 106V128L71 139L51 128V106Z" fill="#ffffff" stroke="#0f172a" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M71 95V117M51 106L71 117L91 106M71 117V139" fill="none" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="24" y="170" class="title" font-size="23">FCStd</text>
+    <text x="24" y="198" class="title" font-size="23">+ STEP</text>
+  </g>
+
+  <path class="dim" d="M102 188H332M102 184V192M332 184V192"/>
+  <text x="170" y="182" class="tiny">prompt requirements</text>
+  <path class="dim" d="M513 188H726M513 184V192M726 184V192"/>
+  <text x="566" y="182" class="tiny">source contract</text>
+  <path class="dim" d="M900 188H1158M900 184V192M1158 184V192"/>
+  <text x="982" y="182" class="tiny">repeatable run</text>
+</svg>
