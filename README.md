@@ -125,6 +125,35 @@ Options:
 
 Restart your agent after installing or updating the skill.
 
+## 🧩 Dependency Levels
+
+`freecad-modeling` keeps the FreeCAD source workflow separate from optional
+browser preview tooling. Install only the level you need:
+
+| Level | What works | Extra requirements |
+| --- | --- | --- |
+| Core FreeCAD | Generate FreeCAD Python source, run `FreeCADCmd`, export `.FCStd` / `.step`, and run basic shape checks | FreeCAD with `FreeCADCmd` |
+| Visual preview | Open generated CAD files in a local CAD Explorer browser view | Core FreeCAD, the `cad-explorer` skill, Node.js/npm, and installed Explorer frontend dependencies |
+| Full STEP review | Generate CAD Explorer `.step.glb` sidecars, inspect STEP geometry, and render STEP files reliably in CAD Explorer | Visual preview, the `cad` skill, and CAD Python dependencies such as build123d/OCP, VTK, and trimesh |
+
+For the preview stack, install the CAD skills from the upstream Text-to-CAD
+project:
+
+```bash
+npx skills add earthtojake/text-to-cad
+```
+
+That project includes the `cad` skill and CAD Explorer / render viewer skills.
+After installing, restart your agent and install the local viewer dependencies if
+your agent does not do it automatically:
+
+```bash
+npm --prefix path/to/cad-explorer/scripts/explorer ci
+```
+
+If your installed upstream skill is named `render` instead of `cad-explorer`, use
+its viewer directory as documented by that skill.
+
 ## 🛠️ FreeCAD Requirement
 
 This skill expects a local FreeCAD installation with `FreeCADCmd`.
