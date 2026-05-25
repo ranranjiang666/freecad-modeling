@@ -1,0 +1,8 @@
+interface:
+  display_name: "FreeCAD Modeling"
+  short_description: "Generate, run, validate, and export FreeCAD Python CAD models."
+  brand_color: "#2563EB"
+  default_prompt: "Use $freecad-modeling to create a parametric FreeCAD Python model, export STEP, and open it for review."
+
+policy:
+  allow_implicit_invocation: true
